@@ -703,7 +703,11 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <binding destination="494" name="value" keyPath="self.GMTComponents.year" id="kB2-gE-ThZ"/>
+                            <binding destination="494" name="value" keyPath="self.GMTComponents.year" id="103-qw-yRw">
+                                <dictionary key="options">
+                                    <string key="NSValueTransformerName">TGFComponentDigitTransformer</string>
+                                </dictionary>
+                            </binding>
                         </connections>
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dyY-qA-SHa">

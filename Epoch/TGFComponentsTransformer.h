@@ -11,6 +11,10 @@
 @interface TGFComponentsTransformer : NSValueTransformer
 @property (strong) NSTimeZone *timeZone;
 @end
+
 @interface TGFReverseComponentsTransformer : NSValueTransformer
 @property (strong) NSTimeZone *timeZone;
+@end
+
+@interface TGFComponentDigitTransformer : NSValueTransformer
 @end

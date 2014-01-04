@@ -119,3 +119,26 @@
     return [self.gregorian dateFromComponents:comp];
 }
 @end
+
+@implementation TGFComponentDigitTransformer
++ (BOOL)allowsReverseTransformation
+{
+    return YES;
+}
+
++ (Class)transformedValueClass
+{
+    return [NSString class];
+}
+
+- (id)transformedValue:(id)value
+{
+    return [NSString stringWithFormat:@"%@", value];
+}
+
+- (id)reverseTransformedValue:(id)value
+{
+    NSString * valueStr = [value stringByReplacingOccurrencesOfString:@"," withString:@""];
+    return @([valueStr integerValue]);
+}
+@end

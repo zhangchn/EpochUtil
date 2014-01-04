@@ -18,6 +18,10 @@
 		DB56F6C51877F60300D48372 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB56F6A41877F60300D48372 /* Cocoa.framework */; };
 		DB56F6CD1877F60300D48372 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB56F6CB1877F60300D48372 /* InfoPlist.strings */; };
 		DB56F6CF1877F60300D48372 /* EpochTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB56F6CE1877F60300D48372 /* EpochTests.m */; };
+		DB56F6DA1877FCA400D48372 /* TGFEpochController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB56F6D91877FCA400D48372 /* TGFEpochController.m */; };
+		DB56F6DD1878050700D48372 /* TGFDateTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = DB56F6DC1878050700D48372 /* TGFDateTransformer.m */; };
+		DB56F6E018780C2900D48372 /* TGFComponentsTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = DB56F6DF18780C2900D48372 /* TGFComponentsTransformer.m */; };
+		DB56F6E3187818EC00D48372 /* TGFTimeZoneTransformer.m in Sources */ = {isa = PBXBuildFile; fileRef = DB56F6E2187818EC00D48372 /* TGFTimeZoneTransformer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +54,14 @@
 		DB56F6CA1877F60300D48372 /* EpochTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "EpochTests-Info.plist"; sourceTree = "<group>"; };
 		DB56F6CC1877F60300D48372 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DB56F6CE1877F60300D48372 /* EpochTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EpochTests.m; sourceTree = "<group>"; };
+		DB56F6D81877FCA400D48372 /* TGFEpochController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGFEpochController.h; sourceTree = "<group>"; };
+		DB56F6D91877FCA400D48372 /* TGFEpochController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGFEpochController.m; sourceTree = "<group>"; };
+		DB56F6DB1878050700D48372 /* TGFDateTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGFDateTransformer.h; sourceTree = "<group>"; };
+		DB56F6DC1878050700D48372 /* TGFDateTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGFDateTransformer.m; sourceTree = "<group>"; };
+		DB56F6DE18780C2900D48372 /* TGFComponentsTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGFComponentsTransformer.h; sourceTree = "<group>"; };
+		DB56F6DF18780C2900D48372 /* TGFComponentsTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGFComponentsTransformer.m; sourceTree = "<group>"; };
+		DB56F6E1187818EC00D48372 /* TGFTimeZoneTransformer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TGFTimeZoneTransformer.h; sourceTree = "<group>"; };
+		DB56F6E2187818EC00D48372 /* TGFTimeZoneTransformer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TGFTimeZoneTransformer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +130,14 @@
 				DB56F6B61877F60300D48372 /* TGFAppDelegate.h */,
 				DB56F6B71877F60300D48372 /* TGFAppDelegate.m */,
 				DB56F6B91877F60300D48372 /* MainMenu.xib */,
+				DB56F6D81877FCA400D48372 /* TGFEpochController.h */,
+				DB56F6D91877FCA400D48372 /* TGFEpochController.m */,
+				DB56F6DE18780C2900D48372 /* TGFComponentsTransformer.h */,
+				DB56F6DF18780C2900D48372 /* TGFComponentsTransformer.m */,
+				DB56F6DB1878050700D48372 /* TGFDateTransformer.h */,
+				DB56F6DC1878050700D48372 /* TGFDateTransformer.m */,
+				DB56F6E1187818EC00D48372 /* TGFTimeZoneTransformer.h */,
+				DB56F6E2187818EC00D48372 /* TGFTimeZoneTransformer.m */,
 				DB56F6BC1877F60300D48372 /* Images.xcassets */,
 				DB56F6AB1877F60300D48372 /* Supporting Files */,
 			);
@@ -253,6 +273,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB56F6E3187818EC00D48372 /* TGFTimeZoneTransformer.m in Sources */,
+				DB56F6DA1877FCA400D48372 /* TGFEpochController.m in Sources */,
+				DB56F6E018780C2900D48372 /* TGFComponentsTransformer.m in Sources */,
+				DB56F6DD1878050700D48372 /* TGFDateTransformer.m in Sources */,
 				DB56F6B81877F60300D48372 /* TGFAppDelegate.m in Sources */,
 				DB56F6B11877F60300D48372 /* main.m in Sources */,
 			);

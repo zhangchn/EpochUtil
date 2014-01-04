@@ -11,5 +11,12 @@
 @interface TGFAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (assign) IBOutlet NSWindow *window;
-
+@property (strong) NSDate *epoch;
+@property (strong) NSDateComponents *GMTComponents;
+@property (strong) NSDateComponents *localComponents;
+@property (strong) NSTimeZone *localTimeZone;
+@property (strong) NSValueTransformer *GMTTransformer;
+@property (strong) NSValueTransformer *localTransformer;
+@property (strong) NSValueTransformer *componentsTransformer;
+- (IBAction)didTapNowButton:(id)sender;
 @end

@@ -833,7 +833,11 @@
                             <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                         </textFieldCell>
                         <connections>
-                            <binding destination="494" name="value" keyPath="self.localComponents.year" id="h9u-Aj-JTv"/>
+                            <binding destination="494" name="value" keyPath="self.localComponents.year" id="ugV-li-jzy">
+                                <dictionary key="options">
+                                    <string key="NSValueTransformerName">TGFComponentDigitTransformer</string>
+                                </dictionary>
+                            </binding>
                         </connections>
                     </textField>
                     <textField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b3X-ir-XPR">

@@ -18,8 +18,9 @@
 }
 - (id)reverseTransformedValue:(id)value {
     if ([value isKindOfClass:[NSString class]]) {
+        NSString *valueString = [value stringByReplacingOccurrencesOfString:@"," withString:@""];
         long long interval;
-        [[NSScanner scannerWithString:value] scanLongLong:&interval];
+        [[NSScanner scannerWithString:valueString] scanLongLong:&interval];
         return [NSDate dateWithTimeIntervalSince1970:interval];
     } else {
         return nil;

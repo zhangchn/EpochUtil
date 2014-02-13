@@ -51,6 +51,10 @@
     [self inspect];
 }
 
+- (BOOL)applicationShouldTerminateAfterLastWindowClosed:(NSApplication *)theApplication {
+    return YES;
+}
+
 - (void)inspect
 {
     NSLog(@"self.epoch:%@", self.epoch);

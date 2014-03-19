@@ -43,6 +43,12 @@
     [self addObserver:self forKeyPath:@"GMTComponents.minute" options:NSKeyValueObservingOptionNew context:"appdel"];
     [self addObserver:self forKeyPath:@"GMTComponents.second" options:NSKeyValueObservingOptionNew context:"appdel"];
     [self addObserver:self forKeyPath:@"localTimeZone" options:NSKeyValueObservingOptionNew context:"appdel"];
+    [self addObserver:self forKeyPath:@"localComponents.year" options:NSKeyValueObservingOptionNew context:"appdel"];
+    [self addObserver:self forKeyPath:@"localComponents.month" options:NSKeyValueObservingOptionNew context:"appdel"];
+    [self addObserver:self forKeyPath:@"localComponents.day" options:NSKeyValueObservingOptionNew context:"appdel"];
+    [self addObserver:self forKeyPath:@"localComponents.hour" options:NSKeyValueObservingOptionNew context:"appdel"];
+    [self addObserver:self forKeyPath:@"localComponents.minute" options:NSKeyValueObservingOptionNew context:"appdel"];
+    [self addObserver:self forKeyPath:@"localComponents.second" options:NSKeyValueObservingOptionNew context:"appdel"];
 }
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
@@ -69,18 +75,24 @@
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
-    if ([object isEqual:self] && [keyPath hasPrefix:@"GMTComponents."]) {
-        [self willChangeValueForKey:@"epoch"];
-        self.epoch = [self.GMTTransformer reverseTransformedValue:self.GMTComponents];
-        [self didChangeValueForKey:@"epoch"];
-    } else if ([object isEqual:self] && [keyPath hasPrefix:@"localTimeZone"]) {
-        [self removeObserver:self forKeyPath:@"localTimeZone"];
-        [self willChangeValueForKey:@"localComponents"];
-        //self.localTimeZone = change[NSKeyValueChangeNewKey];
-        [(TGFReverseComponentsTransformer *)self.localTransformer setTimeZone:self.localTimeZone];
-        _localComponents = [self.localTransformer transformedValue:self.epoch];
-        [self didChangeValueForKey:@"localComponents"];
-        [self addObserver:self forKeyPath:@"localTimeZone" options:NSKeyValueObservingOptionNew context:"appdel"];
+    if ([object isEqual:self]){
+        if ([keyPath hasPrefix:@"GMTComponents."]) {
+            [self willChangeValueForKey:@"epoch"];
+            self.epoch = [self.GMTTransformer reverseTransformedValue:self.GMTComponents];
+            [self didChangeValueForKey:@"epoch"];
+        } else if ([keyPath hasPrefix:@"localComponents."]) {
+            [self willChangeValueForKey:@"epoch"];
+            self.epoch = [self.localTransformer reverseTransformedValue:self.localComponents];
+            [self didChangeValueForKey:@"epoch"];
+        } else if ([keyPath hasPrefix:@"localTimeZone"]) {
+            [self removeObserver:self forKeyPath:@"localTimeZone"];
+            [self willChangeValueForKey:@"localComponents"];
+            //self.localTimeZone = change[NSKeyValueChangeNewKey];
+            [(TGFReverseComponentsTransformer *)self.localTransformer setTimeZone:self.localTimeZone];
+            _localComponents = [self.localTransformer transformedValue:self.epoch];
+            [self didChangeValueForKey:@"localComponents"];
+            [self addObserver:self forKeyPath:@"localTimeZone" options:NSKeyValueObservingOptionNew context:"appdel"];
+        }
     }
 }
 @end
